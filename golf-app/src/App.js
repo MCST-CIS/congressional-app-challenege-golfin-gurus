@@ -4,12 +4,12 @@ const GolfApp = () => {
  const [page, setPage] = useState('main-menu');
  const [category, setCategory] = useState('');
  
- // profile stuff
+ //profile stuff
  const [name, setName] = useState('');
  const [handicap, setHandicap] = useState('');
  const [favClub, setFavClub] = useState('');
  
- // club distances
+ //club distances
  const [distances, setDistances] = useState({
  driver: '', '3-wood': '', '5-wood': '',
  '3-iron': '', '4-iron': '', '5-iron': '', '6-iron': '',
@@ -22,7 +22,7 @@ const GolfApp = () => {
  const [suggestion, setSuggestion] = useState('');
  const [targetDist, setTargetDist] = useState('');
 
- // setup scorecard when app loads
+ //setup scorecard when app loads
  useEffect(() => {
  const card = {};
  for (let i = 1; i <= 18; i++) {
@@ -31,7 +31,7 @@ const GolfApp = () => {
  setScorecard(card);
  }, []);
 
- // all the club recommendations by category
+ //all the club recommendations by category
  const recommendations = {
  "Driver & Distance": [
  { name: "TaylorMade Stealth 2 Driver", price: "$499", description: "Latest technology for maximum distance and forgiveness" },
@@ -151,7 +151,7 @@ const GolfApp = () => {
  return Object.values(scorecard).reduce((total, hole) => total + hole.par, 0);
  };
 
- // styles
+ //styles
  const bg = {
  fontFamily: 'Arial, sans-serif',
  margin: 0,
@@ -247,7 +247,7 @@ const GolfApp = () => {
  marginBottom: '20px'
  };
 
- // Main Menu
+ //Main Menu
  const MainMenu = () => (
  <div style={bg}>
  <h1 style={bigTitle}>Golf Guru</h1>
@@ -274,7 +274,7 @@ const GolfApp = () => {
  </div>
  );
 
- // Buy Clubs page
+ //Buy Clubs page
  const BuyClubs = () => (
  <div style={bg}>
  <div style={container}>
@@ -325,7 +325,7 @@ const GolfApp = () => {
  </div>
  );
 
- // Club Distances page
+ //Club Distances page
  const ClubDistances = () => {
  const clubs = [
  { key: 'driver', name: 'Driver' }, { key: '3-wood', name: '3-Wood' },
@@ -378,7 +378,7 @@ const GolfApp = () => {
  );
  };
 
- // Distance to Hole page
+ //Distance to Hole page
  const DistanceToHole = () => (
  <div style={bg}>
  <div style={container}>
@@ -438,7 +438,7 @@ const GolfApp = () => {
  </div>
  );
 
- // Handicap page
+ //Handicap page
  const Handicap = () => (
  <div style={bg}>
  <div style={container}>
@@ -473,7 +473,7 @@ const GolfApp = () => {
  </div>
  );
 
- // Scorecard page
+ //Scorecard page
  const Scorecard = () => (
  <div style={bg}>
  <div style={container}>
@@ -542,7 +542,7 @@ const GolfApp = () => {
  </div>
  );
 
- // Profile page
+ //Profile page
  const Profile = () => (
  <div style={bg}>
  <div style={container}>
@@ -605,7 +605,7 @@ const GolfApp = () => {
  </div>
  );
 
- // figure out which page to show
+ //figure out which page to show
  const renderPage = () => {
  if (page === 'main-menu') return <MainMenu />;
  if (page === 'buy-clubs') return <BuyClubs />;
